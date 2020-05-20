@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #888;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #444;
+  height: 100vh;
+}
+
+header {
+  flex-basis: 10vh;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+main {
+  flex-grow: 1;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+  outline-offset: 0;
+}

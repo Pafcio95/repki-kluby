@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/lobby.css" />
+  </head>
+  <body>
+    <div class="container">
+        <header>Repki kluby</header>
+        <main>
+          <h1>Lobby</h1>
+          <div>
+              <h2>Gracze:</h2>
+              <div class="players">
+              </div>
+          </div>
+          <div class="categories">
+              <h2>Kategorie:</h2>
+              <div class="currentCat"></div>    
+          </div>
+          <div class="rounds">
+            <h2>Liczba rund: <span></span></h2>
+          </div>
+          <div class="settings">
+            <h2>Ustawienia:</h2>
+            <div class="newCat">
+              <input type="text" placeholder="Dodaj nową kategorię">
+              <button>Dodaj</button>
+            </div>
+            <div class="numOfRounds">
+              <label for="num">Ustaw liczbę rund</label>
+              <input type="number" id="num">
+              <button>Ustaw</button>
+            </div>
+          </div>
+          <div class="ready"><button>Gotowy/Niegotowy</button></div>
+    </div>
+    <script src="scripts/lobby.js"></script>
+  </body>
+</html>

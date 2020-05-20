@@ -1,0 +1,30 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+input {
+  font-size: 20px;
+  margin: 5px 0;
+  padding: 2px 5px;
+  border: none;
+}
+
+button {
+  margin: 5px 0;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: #222;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 20px;
+  cursor: pointer;
+}
