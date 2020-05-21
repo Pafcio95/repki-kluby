@@ -1,0 +1,82 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.players {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.currentCat {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.currentCat div {
+  display: flex;
+  min-width: 30%;
+}
+
+main > div {
+  margin: 20px;
+}
+
+h2 span {
+  font-size: 12px;
+  font-style: italic;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.setSettings {
+  overflow-y: hidden;
+}
+
+.settingsmenu {
+  transition: 0.5s;
+  transform: translateY(-250px) translateZ(-10px);
+}
+
+.settingsmenu.show {
+  transform: translateY(0px) translateZ(0px);
+}
+
+.settingsmenu > div {
+  display: flex;
+  justify-content: center;
+}
+
+.settings input {
+  margin: 5px;
+  width: 250px;
+}
+
+main > :last-child {
+  margin-bottom: 60px;
+}

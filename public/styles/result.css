@@ -1,0 +1,38 @@
+.results {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.position {
+  flex-basis: 20%;
+  padding: 5px 10px;
+}
+
+.points {
+  flex-basis: 20%;
+  padding: 5px 10px;
+}
+
+.nick {
+  padding: 5px 10px;
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+a {
+  display: block;
+  margin: 20px auto 100px;
+  padding: 5px 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: #222;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 20px;
+  cursor: pointer;
+  max-width: 200px;
+  text-decoration: none;
+}

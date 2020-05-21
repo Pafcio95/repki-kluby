@@ -1,0 +1,76 @@
+.answer {
+  display: flex;
+}
+
+.answer span {
+  margin: 10px;
+  padding: 5px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 25px;
+}
+
+.info.fixed {
+  position: fixed;
+}
+
+.category {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  text-align: center;
+}
+
+.category .description {
+  display: flex;
+}
+
+.category .answers {
+  display: flex;
+}
+
+.category .nick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 100px;
+}
+
+.category .answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 100px;
+}
+
+.category .option {
+  flex-grow: 1;
+  padding: 5px;
+}
+
+.option input[type="radio"] {
+  width: initial;
+}
+
+@media (max-width: 600px) {
+  .category .option {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .category {
+    font-size: 12px;
+  }
+}
