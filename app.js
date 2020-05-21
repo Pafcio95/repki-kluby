@@ -232,6 +232,7 @@ app.post("/sendchecked", (req, res) => {
 app.use(express.static("./public"));
 
 const removePlayer = (nick) => {
+  console.log("usuwam", nick);
   const index = players.findIndex((e) => e.nick === nick);
   if (index + 1) {
     clearInterval(players[index].intervalID);
@@ -340,6 +341,7 @@ const endRound = () => {
 const endGame = () => {
   players.forEach((player) => {
     lastGameResults.push({ nick: player.nick, points: player.points });
+    clearTimeout(player.intervalID);
   });
   numOfRounds = 1;
   gameStatus = "lobby";
