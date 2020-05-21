@@ -30,20 +30,16 @@ const letters = [
   "7",
 ];
 const players = [];
-const categories = ["Państwa", "Miasta"];
-let lastGameResults = [
-  { nick: "Paweł", points: 150 },
-  { nick: "Sobcio", points: 170 },
-  { nick: "Krzysiu", points: 120 },
-];
+const categories = [];
+let lastGameResults = [];
 let timer;
 let timerInterval;
-let numOfRounds = 1;
+let numOfRounds = 3;
 let gameStatus = "lobby";
 let currentRound = 0;
 let currentLetter = "";
 let roundTime = 120;
-let waitTime = 0;
+let waitTime = 10;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -340,6 +336,7 @@ const endRound = () => {
 
 const endGame = () => {
   players.forEach((player) => {
+    lastGameResults = [];
     lastGameResults.push({ nick: player.nick, points: player.points });
     clearTimeout(player.intervalID);
   });
