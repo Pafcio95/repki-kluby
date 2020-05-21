@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const timers = require("timers");
+const port = process.env.PORT || 3000;
 const app = express();
 
 const letters = [
@@ -353,6 +353,6 @@ const endGame = () => {
   categories.splice(0, categories.length);
 };
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("serwer nasłuchuje");
 });
