@@ -335,8 +335,8 @@ const endRound = () => {
 };
 
 const endGame = () => {
+  lastGameResults = [];
   players.forEach((player) => {
-    lastGameResults = [];
     lastGameResults.push({ nick: player.nick, points: player.points });
     clearTimeout(player.intervalID);
   });
