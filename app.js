@@ -314,12 +314,14 @@ const countPoints = () => {
     let sumOfRatio = 0;
     playersAnswersRatio.forEach((ratio) => (sumOfRatio += ratio.ratio));
 
-    pointValue = (players.length * 10) / sumOfRatio;
+    if (sumOfRatio !== 0) {
+      pointValue = (players.length * 10) / sumOfRatio;
 
-    playersAnswersRatio.forEach((ratio) => {
-      const player = players.find((player) => player.nick === ratio.nick);
-      player.points += ratio.ratio * pointValue;
-    });
+      playersAnswersRatio.forEach((ratio) => {
+        const player = players.find((player) => player.nick === ratio.nick);
+        player.points += ratio.ratio * pointValue;
+      });
+    }
   });
 };
 
