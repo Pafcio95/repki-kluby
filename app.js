@@ -200,7 +200,8 @@ app.post("/setwaittime", (req, res) => {
 
 app.post("/sendanswers", (req, res) => {
   const player = players.find((e) => e.nick === req.cookies.nick);
-  player.answers = req.body;
+  if (player) player.answers = req.body;
+  else endGame();
   stopTimer();
   res.end();
 });
@@ -227,7 +228,6 @@ app.post("/sendchecked", (req, res) => {
 app.use(express.static("./public"));
 
 const removePlayer = (nick) => {
-  console.log("usuwam", nick);
   const index = players.findIndex((e) => e.nick === nick);
   if (index + 1) {
     clearInterval(players[index].intervalID);
