@@ -169,7 +169,7 @@ app.get("/generateround", (req, res) => {
 
 app.post("/changerounds", (req, res) => {
   const { num } = req.body;
-  if (Number.isInteger(num)) numOfRounds = num;
+  if (Number.isInteger(num) && num > 0) numOfRounds = num;
   res.end();
 });
 
@@ -278,7 +278,7 @@ const checkIsEveryoneChecks = () => {
 
 const countPoints = () => {
   const checkedAnswers = [];
-  players.forEach((player) => checkedAnswers.push([...player.checked]));
+  players.forEach((player) => checkedAnswers.push(...player.checked));
 
   categories.forEach((category) => {
     playersAnswersRatio = [];
