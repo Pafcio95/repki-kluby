@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const port = process.env.PORT || 3000;
 const app = express();
 
-const letters = [
+let letters = [
   "a",
   "b",
   "c",
@@ -169,7 +169,8 @@ app.get("/generateround", (req, res) => {
 
 app.post("/changerounds", (req, res) => {
   const { num } = req.body;
-  if (Number.isInteger(num) && num > 0) numOfRounds = num;
+  if (Number.isInteger(num) && num > 0 && num <= letters.length)
+    numOfRounds = num;
   res.end();
 });
 
@@ -237,7 +238,9 @@ const removePlayer = (nick) => {
 
 const startRound = () => {
   gameStatus = "game";
-  currentLetter = letters[Math.floor(Math.random() * letters.length)];
+  const index = Math.floor(Math.random() * letters.length);
+  currentLetter = letters[index];
+  letters.splice(index, 1);
   currentRound++;
   timer = roundTime;
   timerInterval = setInterval(() => {
@@ -349,6 +352,30 @@ const endGame = () => {
   waitTime = 10;
   players.splice(0, players.length);
   categories.splice(0, categories.length);
+  letters = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "r",
+    "s",
+    "t",
+    "u",
+    "w",
+    "z",
+  ];
 };
 
 app.listen(port, () => {
