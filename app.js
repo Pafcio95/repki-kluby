@@ -27,7 +27,6 @@ const letters = [
   "u",
   "w",
   "z",
-  "7",
 ];
 const players = [];
 const categories = [];
