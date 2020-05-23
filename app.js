@@ -226,6 +226,36 @@ app.post("/sendchecked", (req, res) => {
   if (checkIsEveryoneChecks()) endRound();
 });
 
+app.get("/api", (req, res) => {
+  const playersToSend = players.map((e) => {
+    return {
+      nick: e.nick,
+      points: e.points,
+      ready: e.ready,
+      checked: e.checked,
+      answers: e.answers,
+    };
+  });
+
+  const data = {
+    gameStatus,
+    players: playersToSend,
+    timer,
+    currentRound,
+    currentLetter,
+    categories,
+  };
+
+  res.json(data);
+});
+
+app.post("/reset", (req, res) => {
+  if (req.body.login === "admin" && req.body.password === "windows") {
+    endGame();
+  }
+  res.redirect("/");
+});
+
 app.use(express.static("./public"));
 
 const removePlayer = (nick) => {
