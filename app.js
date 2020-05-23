@@ -352,7 +352,7 @@ const countPoints = () => {
 
       playersAnswersRatio.forEach((ratio) => {
         const player = players.find((player) => player.nick === ratio.nick);
-        player.points += ratio.ratio * pointValue;
+        player.points += Math.floor(ratio.ratio * pointValue);
       });
     }
   });
