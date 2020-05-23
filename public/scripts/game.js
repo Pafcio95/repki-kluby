@@ -28,6 +28,7 @@ const generateRound = () => {
 
           const input = document.createElement("input");
           input.setAttribute("id", e);
+          input.setAttribute("autocomplete", "off");
 
           div.appendChild(label);
           div.appendChild(input);
