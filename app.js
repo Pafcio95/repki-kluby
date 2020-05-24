@@ -64,7 +64,7 @@ app.post("/addplayer", (req, res) => {
       id: new Date().getTime(),
       nick: req.body.nick,
       points: 0,
-      intervalID: setInterval(() => removePlayer(req.body.nick), 5000),
+      intervalID: setInterval(() => removePlayer(req.body.nick), 20000),
       ready: false,
       checked: null,
       answers: null,
@@ -259,6 +259,7 @@ app.post("/reset", (req, res) => {
 app.use(express.static("./public"));
 
 const removePlayer = (nick) => {
+  if()
   const index = players.findIndex((e) => e.nick === nick);
   if (index + 1) {
     clearInterval(players[index].intervalID);
