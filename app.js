@@ -259,7 +259,6 @@ app.post("/reset", (req, res) => {
 app.use(express.static("./public"));
 
 const removePlayer = (nick) => {
-  if()
   const index = players.findIndex((e) => e.nick === nick);
   if (index + 1) {
     clearInterval(players[index].intervalID);
