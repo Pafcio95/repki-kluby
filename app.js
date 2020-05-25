@@ -261,12 +261,21 @@ app.use(express.static("./public"));
 const removePlayer = (nick) => {
   const index = players.findIndex((e) => e.nick === nick);
   if (index + 1) {
+    lastGameResults.push({
+      nick: players[index].nick,
+      points: players[index].points,
+    });
     clearInterval(players[index].intervalID);
     players.splice(index, 1);
+  }
+
+  if (!players.length) {
+    endGame();
   }
 };
 
 const startRound = () => {
+  lastGameResults = [];
   gameStatus = "game";
   const index = Math.floor(Math.random() * letters.length);
   currentLetter = letters[index];
@@ -369,12 +378,11 @@ const endRound = () => {
 };
 
 const endGame = () => {
-  lastGameResults = [];
   players.forEach((player) => {
     lastGameResults.push({ nick: player.nick, points: player.points });
     clearTimeout(player.intervalID);
   });
-  numOfRounds = 1;
+  numOfRounds = 5;
   gameStatus = "lobby";
   currentRound = 0;
   currentLetter = "";
